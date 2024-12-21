@@ -126,22 +126,11 @@ def main(image_path, prompt):
         segmented_image[:, :, i] = mask * 255  # White for the segmented area
     
     # Save the result as an image
-    cv2.imwrite('mask.jpg', segmented_image)
-
-    # Display the result
-    cv2.imshow('Segmented Image', segmented_image)
-    print("Press 'q' to quit.")
-    
-    # Wait for the user to press 'q' to quit
-    while True:
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-    
-    cv2.destroyAllWindows()
+    cv2.imwrite('mask5.jpg', segmented_image)
 
 
 if __name__ == "__main__":
     # Path to the input image (replace with your image path)
-    image_path = 'image.jpg'
+    image_path = 'image5.jpg'
     prompt = 'a dog'  # Replace with your text prompt (e.g., 'cat', 'car', etc.)
     main(image_path, prompt)
