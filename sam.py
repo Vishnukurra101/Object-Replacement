@@ -71,18 +71,19 @@ def create_segment_mask_from_box(image, box):
     center_x = (x_min + x_max) // 2
     center_y = (y_min + y_max) // 2
     input_point = np.array([[center_x, center_y]])  # Center of the bounding box
-    input_label = np.array([1])  # 1 indicates foreground
+    input_label = np.ones(input_point.shape[0])
     
     predictor.set_image(image)
     
     masks, scores, logits = predictor.predict(
         point_coords=input_point, 
-        point_labels=input_label, 
+        point_labels=input_label,
         multimask_output=True  # This will generate multiple masks
     )
     
     best_mask_idx = np.argmax(scores)
     mask = masks[best_mask_idx]
+    
     
     return mask
 
@@ -120,13 +121,15 @@ def main(image_path, prompt):
     # Generate the segmentation mask from the bounding box
     mask = create_segment_mask_from_box(image, box)
     
-    # Create a black background with the segmented part white
-    segmented_image = np.zeros_like(image)  # Black background
-    for i in range(3):  # Apply the mask to each channel (R, G, B)
-        segmented_image[:, :, i] = mask * 255  # White for the segmented area
+    # Create a white background with the segmented part black
+    # segmented_image = np.ones_like(image) * 255  # White background
+    # for i in range(3):  # Apply the mask to each channel (R, G, B)
+    #     segmented_image[:, :, i] = segmented_image[:, :, i] * (1 - mask)  # Black for the segmented area
     
+
+
     # Save the result as an image
-    cv2.imwrite('mask5.jpg', segmented_image)
+    cv2.imwrite('mask5.jpg', (mask * 255).astype(np.uint8))
 
 
 if __name__ == "__main__":
