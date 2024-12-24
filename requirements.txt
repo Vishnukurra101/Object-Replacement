@@ -1,0 +1,14 @@
+torch
+torchvision
+transformers
+addict
+yapf
+timm
+numpy
+opencv-python
+supervision>=0.22.0
+pycocotools
+opencv-python
+Pillow
+flask
+segment-anything==0.1.0
