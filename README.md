@@ -43,7 +43,7 @@ object-replacement/
 
 #### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/object-replacement.git
+git clone https://github.com/Vishnukurra101/Diffusion
 cd object-replacement
 ```
 
