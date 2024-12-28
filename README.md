@@ -20,7 +20,7 @@ This project demonstrates object replacement in images using a quantized model f
 
 ### Directory Structure
 ```
-object-replacement/
+Object-Replacement/
 ├── app/
 │   ├── static/
 │   │   └── result.jpg
