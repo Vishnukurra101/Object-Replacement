@@ -20,7 +20,7 @@ This project demonstrates object replacement in images using a quantized model f
 
 ### Directory Structure
 ```
-object-replacement/
+Object-Replacement/
 ├── app/
 │   ├── static/
 │   │   └── result.jpg
@@ -43,7 +43,7 @@ object-replacement/
 
 #### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/object-replacement.git
+git clone https://github.com/Vishnukurra101/Diffusion.git
 cd object-replacement
 ```
 
@@ -81,6 +81,8 @@ Open your browser and navigate to `http://127.0.0.1:5000`.
 - Diffusers
 - OpenCV
 - Flask
+- Pillow
+- segment-anything==0.1.0
 
 ---
 
