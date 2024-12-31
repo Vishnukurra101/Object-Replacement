@@ -1,7 +1,4 @@
 GroundingDINO/
-image*.jpg
-mask*.jpg
+Images/
 sam_vit_h_4b8939.pth
-test.png
-test_mask.png
 whole.py
