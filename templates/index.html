@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Replacement App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .result-img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Object Replacement Using AI</h1>
+        <p class="text-center text-muted">Upload an image, describe the object to replace, and specify the new object.</p>
+        
+        <form method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="image" class="form-label">Upload Image</label>
+                <input class="form-control" type="file" id="image" name="image" accept="image/*" required>
+            </div>
+            <div class="mb-3">
+                <label for="prompt" class="form-label">Object to Remove</label>
+                <input type="text" class="form-control" id="prompt" name="prompt" placeholder="e.g., a dog" required>
+            </div>
+            <div class="mb-3">
+                <label for="new_prompt" class="form-label">Replacement Object</label>
+                <input type="text" class="form-control" id="new_prompt" name="new_prompt" placeholder="e.g., a cat running in a field" required>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Process Image</button>
+            </div>
+        </form>
+
+        {% if result_image %}
+        <div class="mt-5 text-center">
+            <h3>Processed Image</h3>
+            <img src="{{ result_image }}" alt="Result" class="result-img">
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

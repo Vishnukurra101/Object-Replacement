@@ -43,8 +43,8 @@ Object-Replacement/
 
 #### 1. Clone the repository
 ```bash
-git clone https://github.com/Vishnukurra101/Diffusion.git
-cd object-replacement
+git clone https://github.com/Vishnukurra101/Object-Replacement.git
+cd Object-Replacement
 ```
 
 #### 2. Install dependencies
