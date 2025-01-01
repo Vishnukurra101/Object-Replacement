@@ -21,11 +21,10 @@ This project demonstrates object replacement in images using a quantized model f
 ### Directory Structure
 ```
 Object-Replacement/
-├── app/
-│   ├── static/
-│   │   └── result.jpg
-│   └── templates/
-│       └── index.html
+├── static/
+│   └── result.jpg
+└── templates/
+     └── index.html
 ├── src/
 │   ├── __init__.py
 │   ├── model_loader.py
