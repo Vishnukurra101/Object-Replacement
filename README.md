@@ -23,8 +23,8 @@ This project demonstrates object replacement in images using a quantized model f
 Object-Replacement/
 ├── static/
 │   └── result.jpg
-└── templates/
-     └── index.html
+├── templates/
+│    └── index.html
 ├── src/
 │   ├── __init__.py
 │   ├── model_loader.py
