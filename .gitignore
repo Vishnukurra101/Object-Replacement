@@ -2,3 +2,5 @@ GroundingDINO/
 Images/
 sam_vit_h_4b8939.pth
 whole.py
+Stable_diffusion.ipynb
+sam.py
