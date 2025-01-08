@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processed Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .result-img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Processed Results</h1>
+        <p class="text-muted">Below are the original image, segmentation mask, and final processed image.</p>
+        
+        <h3>Original Image</h3>
+        <img src="{{ original_image }}" alt="Original Image" class="result-img">
+
+        <h3>Generated Mask</h3>
+        <img src="{{ mask_image }}" alt="Generated Mask" class="result-img">
+
+        <h3>Final Processed Image</h3>
+        <img src="{{ result_image }}" alt="Processed Image" class="result-img">
+
+        <a href="/" class="btn btn-primary mt-3">Process Another Image</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

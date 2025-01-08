@@ -38,15 +38,21 @@ def index():
         # Inpainting
         result = perform_inpainting(pipeline, image, mask, new_prompt)
 
-        # Convert result to displayable format
-        result_image = np.array(result)
-        # result_image = cv2.cvtColor(result_image, cv2.COLOR_RGB2BGR)
-
-        # Save result
+        # Convert images to saveable format
+        original_path = 'static/original.jpg'
+        mask_path = 'static/mask.jpg'
         result_path = 'static/result.jpg'
+
+        cv2.imwrite(original_path, image)
+        cv2.imwrite(mask_path, mask * 255)  # Scale mask to [0, 255] for saving
+        result_image = np.array(result)
         cv2.imwrite(result_path, result_image)
 
-        return render_template('index.html', result_image=result_path)
+        # Pass paths to the results page
+        return render_template('results.html', 
+                               original_image=original_path, 
+                               mask_image=mask_path, 
+                               result_image=result_path)
     return render_template('index.html')
 
 if __name__ == '__main__':
