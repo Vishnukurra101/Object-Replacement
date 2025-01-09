@@ -2,7 +2,8 @@ import torch
 from diffusers import StableDiffusionInpaintPipeline
 from segment_anything import SamPredictor, sam_model_registry
 from transformers import AutoProcessor, AutoModelForZeroShotObjectDetection
-
+from diffusers import AutoPipelineForInpainting
+    
 class ModelLoader:
     @staticmethod
     def load_pipeline():
